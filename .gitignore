@@ -1,0 +1,37 @@
+# Build
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+artifacts/
+
+# Tests and coverage
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+
+# User and IDE files
+.vs/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.rsuser
+*.DotSettings.user
+
+# Packages
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+project.lock.json
+project.fragment.lock.json
+
+# OS and editor scratch files
+.DS_Store
+Thumbs.db
+*.swp
+*~
