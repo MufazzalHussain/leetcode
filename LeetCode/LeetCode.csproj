@@ -7,8 +7,4 @@
     <RootNamespace>LeetCode</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="..\problems\**\*.cs" Link="problems\%(RecursiveDir)%(Filename)%(Extension)" />
-  </ItemGroup>
-
 </Project>

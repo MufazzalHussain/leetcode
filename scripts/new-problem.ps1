@@ -3,7 +3,7 @@
     Scaffold a problem folder, a method stub, and a skipped test.
 
 .DESCRIPTION
-    Creates problems/NNNN-slug from templates/PROBLEM_README.md, a Solution.cs
+    Creates LeetCode/problems/NNNN-slug from templates/PROBLEM_README.md, a Solution.cs
     stub under namespace LeetCode.Problems.PNNNN, and a mirrored skipped test
     in LeetCode.Tests. Appends a progress-table row in README.md.
 
@@ -108,7 +108,7 @@ $title = Get-TitleFromSlug -Value $Slug
 $namespace = "LeetCode.Problems.P$padded"
 $testNamespace = "LeetCode.Tests.Problems.P$padded"
 
-$problemDir = Join-Path $repoRoot "problems/$folderName"
+$problemDir = Join-Path $repoRoot "LeetCode/problems/$folderName"
 $testDir = Join-Path $repoRoot "LeetCode.Tests/problems/$folderName"
 $templatePath = Join-Path $repoRoot 'templates/PROBLEM_README.md'
 $readmePath = Join-Path $repoRoot 'README.md'
@@ -197,6 +197,6 @@ else {
     }
 }
 
-Write-Output "Created $folderName"
+Write-Output "Created LeetCode/problems/$folderName"
 Write-Output "Next: fill in the problem README, replace Solve with the real signature, add sample tests, then remove Skip."
 Write-Output "Also set Difficulty, Pattern, and Status in the progress table, and add the problem to the patterns index."

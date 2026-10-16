@@ -9,17 +9,17 @@ Problem notes link out to the original problem. They do not copy the statement.
 ```text
 LeetCode.sln
 LeetCode/                          Class library (net8.0)
+  problems/NNNN-slug/              One folder per problem, inside the project
+    Solution.cs                    namespace LeetCode.Problems.PNNNN
+    README.md                      Notes from templates/PROBLEM_README.md
 LeetCode.Tests/                    xUnit tests, mirrored per problem
   problems/NNNN-slug/SolutionTests.cs
-problems/NNNN-slug/                One folder per problem
-  Solution.cs                      namespace LeetCode.Problems.PNNNN
-  README.md                        Notes from templates/PROBLEM_README.md
 templates/PROBLEM_README.md
 scripts/new-problem.ps1
 .github/workflows/ci.yml           Build and test
 ```
 
-`LeetCode` compiles every `*.cs` file under `problems/`. Tests stay in `LeetCode.Tests` so sample cases are not part of the library.
+Problem folders live inside `LeetCode` and `LeetCode.Tests`. The SDK includes `*.cs` and `README.md` from those directories, so both show in Solution Explorer and Add > New Folder / Class works on `problems`. Tests stay in `LeetCode.Tests` so sample cases are not part of the library.
 
 ## Add a problem
 
@@ -29,10 +29,10 @@ From the repo root, in PowerShell:
 ./scripts/new-problem.ps1 -Number 15 -Slug 3sum
 ```
 
-`Number` is the problem number (`15` becomes folder `0015`). `Slug` is the lowercase URL slug (`3sum`). The script:
+`Number` is the problem number (`15` becomes folder `0015-3sum`). `Slug` is the lowercase URL slug (`3sum`). The script:
 
-1. Creates `problems/0015-3sum/README.md` from `templates/PROBLEM_README.md`.
-2. Creates `problems/0015-3sum/Solution.cs` with a `Solve` stub that throws `NotImplementedException`.
+1. Creates `LeetCode/problems/0015-3sum/README.md` from `templates/PROBLEM_README.md`.
+2. Creates `LeetCode/problems/0015-3sum/Solution.cs` with a `Solve` stub that throws `NotImplementedException`.
 3. Creates `LeetCode.Tests/problems/0015-3sum/SolutionTests.cs` with a skipped test.
 4. Appends a row to the progress table. Leave the HTML comments that surround that table in place.
 
@@ -66,7 +66,7 @@ Unimplemented problems stay skipped, so the suite can stay green while a stub is
 ## Patterns
 
 - **Hash Map**
-  - [0001. Two Sum](problems/0001-two-sum/)
+  - [0001. Two Sum](LeetCode/problems/0001-two-sum/)
 - **Array**
 - **Two Pointers**
 - **Sliding Window**
